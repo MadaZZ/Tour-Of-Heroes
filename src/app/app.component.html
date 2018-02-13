@@ -4,7 +4,13 @@
   Welcome to {{ title }}!
 </h1>
 
-<app-heroes></app-heroes>
+<nav>
+  <a routerLink="/heroesPath">Heroes</a>
+</nav>
+
+<!--<app-heroes></app-heroes>     //Removed Because added route--> 
+<router-outlet></router-outlet>
+
 <app-message></app-message>
   
   
