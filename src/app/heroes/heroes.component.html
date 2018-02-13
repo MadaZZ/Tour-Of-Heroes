@@ -1,0 +1,23 @@
+<!-- this div has been commented here and put in her-details
+<div *ngIf="selectedHero">
+<h2>{{ selectedHero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{selectedHero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedHero.name" placeholder="name">
+  </label>
+  <label>id:
+    <input [(ngModel)]="selectedHero.id" placeholder="id" number>
+  </label>
+</div>
+</div>
+-->
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes1" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<button class="deselector" (click)="Deselect()" >Deselect</button>
+<app-hero-details [hero1]="selectedHero"></app-hero-details>

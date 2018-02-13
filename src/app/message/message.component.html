@@ -1,0 +1,8 @@
+<div *ngIf="messageService2.messages.length"> <!--div works if messageService1.messages has some length-->
+    
+      <h2>Messages</h2>
+      <button class="clear"
+              (click)="messageService2.clear()">clear</button><!-- clickbinding -->
+      <div *ngFor='let message of messageService2.messages'> {{message}} </div>
+    
+    </div>
