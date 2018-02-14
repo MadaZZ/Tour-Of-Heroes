@@ -9,7 +9,8 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component'; //
 import { HeroService } from './hero.service';// HeroService fetches heroes from mock heroes, Uses observables to fetch is data is asynchronous //-->> Also injected with message service.
 import { MessageComponent } from './message/message.component'; // displays message below HeroDetails.
 import { MessageService } from './message.service';
-import { AppRoutingModule } from './/app-routing.module'// Service to inject message -->>Injects in HeroService.
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component'// Service to inject message -->>Injects in HeroService.
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module'// Service to inject mes
     AppComponent,
     HeroesComponent,
     HeroDetailsComponent,
-    MessageComponent
+    MessageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

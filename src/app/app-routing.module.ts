@@ -1,16 +1,22 @@
 //This is the routing module
-import { NgModule } from '@angular/core'; 
 //import { CommonModule } from '@angular/common'; -->>Not required
+
+import { NgModule } from '@angular/core'; 
 import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component'
+import { MessageComponent } from './message/message.component'
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 const routesHere: Routes = [
-  { path: 'heroesPath', component: HeroesComponent }
+  { path: 'heroesPath', component: HeroesComponent },
+  { path: 'messagePath', component: MessageComponent },
+  { path: 'dashboardPath', component: DashboardComponent },
+  { path: '', redirectTo: '/dashboardPath', pathMatch: 'full' }
 ];
 
 
 @NgModule({
-  
+
   imports: [
     //CommonModule -->> Not required
     RouterModule.forRoot(routesHere)
