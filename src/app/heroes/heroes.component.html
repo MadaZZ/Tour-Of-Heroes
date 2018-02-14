@@ -15,9 +15,12 @@
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes1" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+  <li *ngFor="let hero of heroes1" > <!--[class.selected]="hero === selectedHero" (click)="onSelect(hero)"> // Removed as routes added-->
+    <a routerLink="/detail/{{hero.id}}">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
-<button class="deselector" (click)="Deselect()" >Deselect</button>
-<app-hero-details [hero1]="selectedHero"></app-hero-details>
+
+<!-- <button class="deselector" (click)="Deselect()" >Deselect</button> //removed when links added.
+  <app-hero-details [hero1]="selectedHero"></app-hero-details> //Removed to display on clicking hero-->

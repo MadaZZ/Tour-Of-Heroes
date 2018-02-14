@@ -6,12 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component'
 import { MessageComponent } from './message/message.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
+import { HeroDetailsComponent } from './hero-details/hero-details.component'
 
 const routesHere: Routes = [
   { path: 'heroesPath', component: HeroesComponent },
-  { path: 'messagePath', component: MessageComponent },
+  //{ path: 'messagePath', component: MessageComponent },
   { path: 'dashboardPath', component: DashboardComponent },
-  { path: '', redirectTo: '/dashboardPath', pathMatch: 'full' }
+  { path: '', redirectTo: '/dashboardPath', pathMatch: 'full' },
+  { path: 'detail/:id', component: HeroDetailsComponent }
 ];
 
 
