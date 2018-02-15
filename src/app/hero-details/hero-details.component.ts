@@ -11,8 +11,8 @@ import { HeroService }  from '../hero.service';
   styleUrls: ['./hero-details.component.css']
 })
 export class HeroDetailsComponent implements OnInit {
-  @Input() hero1:Hero;
-  //@Input() messagehere:MessageService;
+  @Input() heroDE:Hero[];
+  //@Input()messagehere:MessageService;
   constructor(private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location) { }
@@ -22,7 +22,10 @@ export class HeroDetailsComponent implements OnInit {
   }
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.sendHeroes(id)
-      .subscribe(hero => this.hero1 = hero);
+    this.heroService.sendHeroes() 
+    .subscribe(hero2 => this.heroDE = hero2);
+  }
+  goBack(): void{
+    this.location.back();
   }
 }

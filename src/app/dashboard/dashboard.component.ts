@@ -8,7 +8,7 @@ import { HeroService } from '../hero.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+  heroesDash: Hero[] = [];
  
   constructor(private heroService: HeroService) { }
  
@@ -17,7 +17,6 @@ export class DashboardComponent implements OnInit {
   }
  
   getHeroes(): void {
-    this.heroService.sendHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+    this.heroService.sendHeroes().subscribe(heroes => this.heroesDash = heroes.slice(0, 4));
   }
 }
