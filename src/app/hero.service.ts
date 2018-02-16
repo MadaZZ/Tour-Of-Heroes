@@ -18,7 +18,7 @@ export class HeroService {
   //this is the observable return
   sendHeroes(): Observable<Hero[]> {
     // Todo: send the message _after_ fetching the heroes
-    this.messageService1.add('HeroService: fetched heroes details');
+    this.messageService1.add('HeroService: fetched heroes list');
     return of(HEROES);
   }
   getHero(id: number): Observable<Hero> {

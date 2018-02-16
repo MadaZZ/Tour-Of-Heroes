@@ -10,10 +10,10 @@ import { HeroService } from '../hero.service'
 })
 export class HeroesComponent implements OnInit {
   heroes1: Hero[];
-  constructor(private heroService1: HeroService) { } //>>The parameter simultaneously defines a private heroService1 property and identifies it as a HeroService injection site
+  constructor(private heroService: HeroService) { } //>>The parameter simultaneously defines a private heroService1 property and identifies it as a HeroService injection site
   
   getHeroes1(): void {
-    this.heroService1.sendHeroes().subscribe(heroess=>this.heroes1=heroess);//This is observable used //arrow function used to display heroes
+    this.heroService.sendHeroes().subscribe(heroess=>this.heroes1=heroess);//This is observable used //arrow function used to display heroes
      //heroes changed to heroes1
     //[[[[this.heroes1 = this.heroService.sendHeroes();]]]] -->>this line has been changed to use observables for asynchronous data stream
     //getHeroes changed to sendHeroes for understanding
