@@ -15,18 +15,18 @@ export class HeroService {
   }
   */
   
-  /*
+  
   //this is the observable return
   sendHeroes(): Observable<Hero[]> {
     // Todo: send the message _after_ fetching the heroes
     this.messageService1.add('HeroService: fetched heroes list');
     return of(HEROES);
   }
-  */
   /** GET heroes from the server */
+  /*
   sendHeroes (): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
-  }
+  }*/
   getHero(id: number): Observable<Hero> {
     // Todo: send the message _after_ fetching the hero
     this.messageService1.add(`HeroService: fetched hero id=${id}`);
@@ -36,7 +36,7 @@ export class HeroService {
   private log(message: string) {
     this.messageService1.add('HeroService: ' + message);
   }
-  private heroesUrl = 'api/heroes';  // URL to web api
+ // private heroesUrl = 'api/heroes';  // URL to web api
 constructor(private http: HttpClient, private messageService1:MessageService) { }
 
 }
